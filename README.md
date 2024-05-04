@@ -1,6 +1,6 @@
 # docker-h4cf
 
-## Ubuntu based Docker container for HDF4 CF Conversion Toolkit
+## Ubuntu Docker image for HDF4 CF Conversion Toolkit
 
 The Docker file `Dockerfile` sources an Apt package file named `apt.txt`, which lists the Apt packages required to build the image.
 
