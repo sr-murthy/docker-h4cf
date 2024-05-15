@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:18.04
 
 MAINTAINER The HDF-EOS Tools and Information Center <eoshelp@hdfgroup.org>
 
