@@ -15,7 +15,7 @@ ARG HDF4_VER=4.2.16
 RUN wget https://hdf-wordpress-1.s3.amazonaws.com/wp-content/uploads/manual/HDF4/HDF${HDF4_VER}-2/src/hdf-${HDF4_VER}-2.tar.gz && \
     tar zxvf hdf-${HDF4_VER}-2.tar.gz && \
     cd hdf-${HDF4_VER}-2 && \
-    ./configure --enable-shared --disable-netcdf --disable-fortran && \
+    ./configure --prefix=/usr/local/ --enable-shared --disable-netcdf --disable-fortran && \
     make && make check && make install && \
     cd .. && \
     rm -f hdf-${HDF4_VER}-2.tar.gz 
@@ -25,7 +25,7 @@ ARG HDFEOS2_VER=2.20v1.00
 RUN wget -O hdf-eos${HDFEOS2_VER}.tar.Z https://git.earthdata.nasa.gov/rest/git-lfs/storage/DAS/hdfeos/cb0f900d2732ab01e51284d6c9e90d0e852d61bba9bce3b43af0430ab5414903?response-content-disposition=attachment%3B%20filename%3D%22HDF-EOS${HDFEOS_VER}.tar.Z%22%3B%20filename*%3Dutf-8%27%27HDF-EOS2.20v1.00.tar.Z && \
     tar zxvf hdf-eos${HDFEOS2_VER}.tar.Z && \
     cd hdfeos && \
-    ./configure --enable-install-include --with-hdf4=/usr/local && \
+    ./configure --prefix=/usr/local/ --enable-install-include --with-hdf4=/usr/local && \
     make && make check && make install && \
     cd .. && \
     rm -f hdf-eos${HDFEOS2_VER}.tar.Z
@@ -36,7 +36,7 @@ ARG HDF5_DOTVER=1.14.4.2
 RUN wget https://github.com/HDFGroup/hdf5/releases/download/hdf5_${HDF5_DOTVER}/hdf5-${HDF5_VER}.tar.gz && \
     tar zxvf hdf5-${HDF5_VER}.tar.gz && \
     cd hdf5-${HDF5_VER} && \
-    ./configure && \
+    ./configure --prefix=/usr/local/ && \
     make && make check && make install && \
     cd .. && \
     rm -f hdf5-${HDF5_VER}.tar.gz
